@@ -11,9 +11,10 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square frame;
+    private Square glass;
+    private Triangle T1;
+    private Triangle T2;
     private Circle sun;
     private boolean drawn;
 
@@ -22,9 +23,10 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        frame = new Square();
+        glass = new Square();
+        T1 = new Triangle(); 
+        T2 = new Triangle();
         sun = new Circle();
         drawn = false;
     }
@@ -35,21 +37,26 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+            frame.moveHorizontal(-130);
+            frame.moveVertical(80);
+            frame.changeSize(100);
+            frame.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
+            glass.changeColor("blue");
+            glass.moveHorizontal(-120);
+            glass.moveVertical(40);
+            glass.changeSize(40);
+            glass.makeVisible();
     
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
+            T1.changeSize(-60, 100);
+            T1.moveHorizontal(20);
+            T1.moveVertical(0);
+            T1.makeVisible();
+            
+            T2.changeSize(60, 100);
+            T2.moveHorizontal(20);
+            T2.moveVertical(0);
+            T2.makeVisible();
     
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
@@ -65,9 +72,10 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
+        frame.changeColor("white");
+        glass.changeColor("black");
+        T1.changeColor("black");
+        T1.changeColor("black");
         sun.changeColor("black");
     }
 
@@ -76,9 +84,10 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        frame.changeColor("black");
+        glass.changeColor("black");
+        T1.changeColor("green");
+        T1.changeColor("green");
         sun.changeColor("yellow");
     }
 }
